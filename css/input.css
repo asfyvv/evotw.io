@@ -7,40 +7,40 @@
 }
 
 .courseBefore {
-	@apply before:absolute before:w-8 before:h-8 before:rotate-90 before:sm:rotate-0 before:bg-[url('/src/img/arrow.svg')] before:bg-contain before:-bottom-8 before:sm:bottom-auto before:sm:-right-8 before:block before:z-[4] before:border-none;
+	@apply before:absolute before:-bottom-8 before:z-[4] before:block before:h-8 before:w-8 before:rotate-90 before:border-none before:bg-[url('/src/img/arrow.svg')] before:bg-contain before:sm:-right-8 before:sm:bottom-auto before:sm:rotate-0;
 }
 
 @font-face {
 	font-family: "Oswald";
-	src: url("/src/font/Oswald-Bold.woff2") format("woff2");
+	src: url("../font/Oswald-Bold.woff2") format("woff2");
 	font-weight: 700;
 	font-display: swap;
 	font-style: normal;
 }
 @font-face {
 	font-family: "Oswald";
-	src: url("/src/font/Oswald-Regular.woff2") format("woff2");
+	src: url("../font/Oswald-Regular.woff2") format("woff2");
 	font-weight: 400;
 	font-display: swap;
 	font-style: normal;
 }
 @font-face {
 	font-family: "Roboto";
-	src: url("/src/font/Roboto-Regular.woff2") format("woff2");
+	src: url("../font/Roboto-Regular.woff2") format("woff2");
 	font-weight: 400;
 	font-display: swap;
 	font-style: normal;
 }
 @font-face {
 	font-family: "RobotoCondensed";
-	src: url("/src/font/RobotoCondensed-Light.woff2") format("woff2");
+	src: url("../font/RobotoCondensed-Light.woff2") format("woff2");
 	font-weight: 300;
 	font-display: swap;
 	font-style: normal;
 }
 @font-face {
 	font-family: "RobotoCondensed";
-	src: url("/src/font/RobotoCondensed-Regular.woff2") format("woff2");
+	src: url("../font/RobotoCondensed-Regular.woff2") format("woff2");
 	font-weight: 400;
 	font-display: swap;
 	font-style: normal;
@@ -94,13 +94,13 @@
 	text-align: center;
 	line-height: 30px;
 	font-size: 12px;
-	color:#000;
+	color: #000;
 	opacity: 1;
-	background: rgba(0,0,0,0.2);
+	background: rgba(0, 0, 0, 0.2);
 }
 
 .swiper-pagination-bullet-active {
-	color:#fff;
+	color: #fff;
 	background: #1f5bff;
 }
 /* h2:after {
