@@ -630,6 +630,10 @@ video {
   z-index: 3;
 }
 
+.z-\[1\] {
+  z-index: 1;
+}
+
 .order-first {
   order: -9999;
 }
@@ -1112,6 +1116,10 @@ video {
 
 .bg-cover {
   background-size: cover;
+}
+
+.bg-center {
+  background-position: center;
 }
 
 .bg-no-repeat {
@@ -1610,6 +1618,25 @@ video {
   .max-\[599px\]\:w-full {
     width: 100%;
   }
+
+  @media (max-width: 599px) {
+    .max-\[599px\]\:max-\[599px\]\:w-full {
+      width: 100%;
+    }
+  }
+
+  .max-\[599px\]\:bg-\[url\(\'\.\.\/img\/bg2\.jpg\'\)\] {
+    background-image: url('../img/bg2.jpg');
+  }
+
+  .max-\[599px\]\:bg-\[url\(\'\.\.\/img\/rehabilitation\.jpg\'\)\] {
+    background-image: url('../img/rehabilitation.jpg');
+  }
+
+  .max-\[599px\]\:text-white {
+    --tw-text-opacity: 1;
+    color: rgb(255 255 255 / var(--tw-text-opacity));
+  }
 }
 
 @media (min-width: 502px) {
@@ -1796,6 +1823,11 @@ video {
   .lg\:my-\[50px\] {
     margin-top: 50px;
     margin-bottom: 50px;
+  }
+
+  .lg\:bg-white {
+    --tw-bg-opacity: 1;
+    background-color: rgb(255 255 255 / var(--tw-bg-opacity));
   }
 
   .lg\:text-\[18px\] {
