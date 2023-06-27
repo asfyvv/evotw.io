@@ -1,0 +1,165 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.PicBefore {
+	@apply before:absolute before:z-[2] before:h-full before:w-full before:bg-[#000000] before:opacity-40;
+}
+
+.courseBefore {
+	@apply before:absolute before:w-8 before:h-8 before:rotate-90 before:sm:rotate-0 before:bg-[url('/src/img/arrow.svg')] before:bg-contain before:-bottom-8 before:sm:bottom-auto before:sm:-right-8 before:block before:z-[4] before:border-none;
+}
+
+@font-face {
+	font-family: "Oswald";
+	src: url("/src/font/Oswald-Bold.woff2") format("woff2");
+	font-weight: 700;
+	font-display: swap;
+	font-style: normal;
+}
+@font-face {
+	font-family: "Oswald";
+	src: url("/src/font/Oswald-Regular.woff2") format("woff2");
+	font-weight: 400;
+	font-display: swap;
+	font-style: normal;
+}
+@font-face {
+	font-family: "Roboto";
+	src: url("/src/font/Roboto-Regular.woff2") format("woff2");
+	font-weight: 400;
+	font-display: swap;
+	font-style: normal;
+}
+@font-face {
+	font-family: "RobotoCondensed";
+	src: url("/src/font/RobotoCondensed-Light.woff2") format("woff2");
+	font-weight: 300;
+	font-display: swap;
+	font-style: normal;
+}
+@font-face {
+	font-family: "RobotoCondensed";
+	src: url("/src/font/RobotoCondensed-Regular.woff2") format("woff2");
+	font-weight: 400;
+	font-display: swap;
+	font-style: normal;
+}
+#cards {
+	counter-reset: card;
+}
+
+.card:before {
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	top: 0px;
+	left: 0;
+	color: rgba(31, 91, 255, 0.1);
+	counter-increment: card;
+	content: counter(card);
+	font-size: 265px;
+	line-height: 265px;
+}
+
+.card:hover:before {
+	color: rgba(31, 91, 255, 0.2);
+	transition: 0.3s;
+}
+
+@media (max-width: 501px) {
+	.card {
+		height: 165px;
+	}
+	.card:before {
+		position: absolute;
+		height: 100%;
+		width: 100%;
+		top: 0px;
+		left: 0;
+		color: rgba(31, 91, 255, 0.1);
+		counter-increment: card;
+		content: counter(card);
+		font-size: 130px;
+		line-height: 170px;
+	}
+}
+
+.swiper-pagination-bullet {
+	padding: 5px 10px;
+	border-radius: 0;
+	width: 20px;
+	height: 20px;
+	border-radius: 100%;
+	text-align: center;
+	line-height: 30px;
+	font-size: 12px;
+	color:#000;
+	opacity: 1;
+	background: rgba(0,0,0,0.2);
+}
+
+.swiper-pagination-bullet-active {
+	color:#fff;
+	background: #1f5bff;
+}
+/* h2:after {
+    content: "";
+    position: absolute;
+    bottom: -25px;
+    margin-left: 0;
+    width: 100px;
+    height: 2px;
+    z-index: 2;
+    background-color: #1f5bff;
+} */
+
+/* .swiper {
+  width: 780px;
+  height: 510px;
+	border: 1px #000 sold
+} */
+
+/* .swiper-button-prev {
+	display: block;
+	top:	calc(100% - 48px);
+	left: calc(100% - 125px);
+	width: 50px;
+	height: 45px;
+	background-color: #F1F0EB;
+	border-radius: 12px 0px 0 12px;
+
+}
+.swiper-button-prev:after {
+	content: '';
+	display: block;
+	width: 50px;
+	height: 45px;
+	background-image: url('/src/img/left.svg');
+	background-repeat: no-repeat;
+	background-size: 24px 24px;
+	background-position: center;
+}
+
+.swiper-button-next {
+	display: block;
+	top:	calc(100% - 48px);
+	right: 25px;
+	width: 50px;
+	height: 45px;
+	background-color: #F1F0EB;
+	border-left: 1px solid #D9D9D9;
+	border-radius: 0px 12px 12px 0px;
+
+}
+.swiper-button-next:after {
+	content: '';
+	display: block;
+	width: 50px;
+	height: 45px;
+	background-image: url('/src/img/right.svg');
+	background-repeat: no-repeat;
+	background-size: 24px 24px;
+	background-position: center;
+
+} */

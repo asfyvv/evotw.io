@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<link rel="shortcut icon" href="/src/img/favicon.svg" type="image/x-icon" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>EvoSpace | Вселенная твоего сознания</title>
+		<meta name="description" content="Мы предлагаем обучение для тех, кто хочет научиться управлять собой и своей жизнью." />
+		<!-- <link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;400;600;700&family=Roboto:wght@400;600;700&display=swap" rel="stylesheet" /> -->
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+		<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+		<link href="/dist/output.css" rel="stylesheet" />
+	</head>
+	<body class="relative min-h-screen select-none bg-mainbg font-Oswald text-textcolor" x-data="{ openMenu : false }" :class="openMenu ? 'overflow-hidden' : 'overflow-visible'">
+		<!-- Навигация -->
+		<div class="">
+			<header class="fixed z-30 flex h-[70px] w-full flex-col items-center gap-5 bg-black text-lg text-menucolor">
+				<div class="container flex w-full justify-between px-4">
+					<!-- logo -->
+					<a class="h-[70px]" href="#">
+						<img class="h-full" src="/src/img/logo.svg" alt="logo" />
+					</a>
+					<!-- Кнопка мобильного меню -->
+					<div class="flex items-center md:hidden">
+						<button class="uppercase" @click="openMenu = !openMenu" :aria-expanded="openMenu" aria-controls="mobile-navigation" aria-label="Navigation Menu">
+							<svg :class="openMenu ? 'hidden' : 'block'" x-cloak xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-6 w-6">
+								<path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+							</svg>
+							<svg :class="openMenu ? 'block' : 'hidden'" x-cloak xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-6 w-6">
+								<path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+							</svg>
+						</button>
+					</div>
+					<!-- Навигация меню -->
+					<nav class="hidden text-base md:flex lg:text-[18px]">
+						<ul class="flex items-center gap-8 uppercase">
+							<li class="">
+								<a href="/src/index.html" class="menu-link selected relative block" aria-current="true">Главная</a>
+							</li>
+							<li class="">
+								<a href="/src/about.html" class="menu-link relative block">О нас</a>
+							</li>
+							<li class="">
+								<a href="/src/courses.html" class="menu-link relative block">Обучение</a>
+							</li>
+							<li class="">
+								<a href="/src/projects.html" class="menu-link relative block">Проекты</a>
+							</li>
+							<li class="">
+								<a href="/src/services.html" class="menu-link relative block">Услуги</a>
+							</li>
+							<!-- <li class="">
+								<a href="/src/events.html" class="menu-link relative block">События</a>
+							</li> -->
+							<li class="">
+								<a href="/src/contacts.html" class="menu-link relative block">Контакты</a>
+							</li>
+						</ul>
+					</nav>
+					<!-- Телефон -->
+					<a class="flex items-center justify-center gap-2 text-base max-[1023px]:hidden lg:text-[18px]" href="tel:+380675555555">
+						<svg class="h-5" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-6 w-6">
+							<path
+								d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z"
+							/>
+						</svg>
+						+38 (067) 555-55-55
+					</a>
+				</div>
+			</header>
+			<!-- Мобильная навигация -->
+			<!-- <nav id="mobile-navigation" class="fixed bottom-0 left-0 right-0 top-16 z-20 bg-black tracking-wider text-menucolor md:hidden" :class="openMenu ? 'visible' : 'invisible'" x-cloak>
+				<ul class="flex flex-col items-center justify-center gap-5 px-4 pt-6 text-lg uppercase transition-all duration-300" :class="openMenu ? 'translate-y-0' : '-translate-y-full'"> -->
+			<nav
+				id="mobile-navigation"
+				class="fixed bottom-0 left-0 right-0 top-16 z-20 bg-black tracking-wider text-menucolor transition-all duration-700 md:hidden"
+				:class="openMenu ? 'translate-y-0' : '-translate-y-full'"
+				x-cloak
+			>
+				<ul class="flex flex-col items-center justify-center gap-5 px-4 pt-6 text-lg uppercase transition-all duration-700">
+					<li class="">
+						<a href="/src/index.html" class="" @click="openMenu = !openMenu">Главная</a>
+					</li>
+					<li class="">
+						<a href="/src/about.html" class="" @click="openMenu = !openMenu">О нас</a>
+					</li>
+					<li class="">
+						<a href="/src/courses.html" class="" @click="openMenu = !openMenu">Обучение</a>
+					</li>
+					<li class="">
+						<a href="/src/projects.html" class="" @click="openMenu = !openMenu">Проекты</a>
+					</li>
+					<li class="">
+						<a href="/src/services.html" class="" @click="openMenu = !openMenu">Услуги</a>
+					</li>
+					<!-- <li class="">
+						<a href="/src/events.html" class="" @click="openMenu = !openMenu">События</a>
+					</li> -->
+					<li class="">
+						<a href="/src/contacts.html" class="" @click="openMenu = !openMenu">Контакты</a>
+					</li>
+					<li class="pt-6">
+						<a class="flex items-center justify-center gap-2" href="tel:+380675555555">
+							<svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-6 w-6">
+								<path
+									d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z"
+								/>
+							</svg>
+							+38 (067) 555-55-55
+						</a>
+					</li>
+				</ul>
+			</nav>
+		</div>
+		<!-- Первый экран -->
+		<section class="h-screen w-full">
+			<div class="swiper h-full w-full text-menucolor">
+				<div class="swiper-wrapper">
+					<div class="swiper-slide PicBefore w-full bg-[url('/src/img/bg1.jpg')] bg-cover bg-no-repeat">
+						<div class="container mx-auto flex h-full flex-col items-center justify-center text-center">
+							<span class="z-[3] text-[42px] font-semibold md:text-[68px]">Вселенная твоего сознания</span>
+							<span class="z-[3] pt-10 text-[28px] font-semibold md:text-[32px]">Открой путь к своей свободе</span>
+						</div>
+					</div>
+					<div class="swiper-slide PicBefore w-full bg-[url('/src/img/bg2.jpg')] bg-cover bg-no-repeat">
+						<div class="container z-[3] mx-auto flex h-full flex-col items-center justify-center text-center">
+							<span class="z-[3] text-[42px] font-semibold md:text-[68px]">Становление твоего внутреннего Я</span>
+							<span class="z-[3] pt-10 text-[28px] font-semibold md:text-[32px]">По методике внутренней энергоинформационной независимости в школе</span>
+							<h1 class="z-[3] pt-8 text-[28px] font-semibold uppercase md:text-[32px]">EvoSpace</h1>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- Метод -->
+		<section class="pt-8">
+			<div class="container mx-auto px-4">
+				<h2 class="text-center text-[36px] font-semibold uppercase">Метод</h2>
+				<div class="mt-6 flex justify-center">
+					<div class="w-[100px] border border-[#1f5bff] text-center"></div>
+				</div>
+				<div class="pt-4 text-left font-Roboto text-xl">
+					<p class="py-2"><span class="font-semibold uppercase italic">СУТЬ МЕТОДА</span> - целостный динамичный механизм регуляции внутренних энергоинформационных потоков.</p>
+					<p class="py-2">
+						Базовым аспектом практики является направленный вектор движения внутреннего саморегулируемого энергетического потока, а также специфического индивидуального информационного наполнения ее
+						контура.
+					</p>
+					<p class="py-2">
+						<span class="font-semibold uppercase italic">УНИКАЛЬНОСТЬ ПОДХОДА</span> - мы учитываем наличие тонкомерного уровня и рассматриваем его как мощный фактор воздействия на человека,
+						приводящий к блокированию сознания. Работаем в парадигме «Включение сознания - Разблокирование сознания - Освоение внутренней реальности - Выход на эволюционный уровень мышления». Методика
+						предполагает ускоренную эволюцию сознания и личности.
+					</p>
+				</div>
+			</div>
+		</section>
+		<!-- Об авторе -->
+		<section class="pt-8">
+			<div class="container mx-auto px-4">
+				<h2 class="text-center text-[36px] font-semibold uppercase">Об авторе</h2>
+				<div class="mt-6 flex justify-center">
+					<div class="w-[100px] border border-[#1f5bff] text-center"></div>
+				</div>
+				<div class="flex flex-col items-center justify-center gap-6 pt-6 md:flex-row md:items-start md:justify-start">
+					<img class="h-[200px] w-[200px] rounded-[3px] shadow-lg" src="/src/img/noname.jpg" alt="Автор методики Никоненко Валерий Иванович" />
+					<div class="text-left font-Roboto text-xl">
+						<p>
+							<span class="font-semibold">Николенко Валерий Иванович</span> – автор уникального метода целостного внутреннего био-энерго- информационного обмена, основ самоуправления,
+							самосовершенствования, приобретения внутренней личностной свободы и безопасности в условиях негативного влияния на человека внешней реальности. Обладает знанием и умением по построению
+							внутренней самоуправляемой системы самосовершенствования личности как предпосылки трансформационных процессов в обществе. Владеет способностью считывания информации с тонкого плана и
+							специфической технологией обеспечения внутренней безопасности субъекта.
+						</p>
+					</div>
+				</div>
+				<div class="flex flex-col gap-4 pt-6 font-Roboto text-xl md:flex-row">
+					<div class="order-last w-full md:order-first md:w-1/2">
+						<span class="font-semibold uppercase">Наш ПОДХОД ДЛЯ ТЕХ, КТО</span>
+						<ul class="list-disc py-4 pl-8">
+							<li>
+								<p>Хочет почувствовать себя по-настоящему живым и обрести свободу мышления.</p>
+							</li>
+							<li>
+								<p>Стремится к определению своего места и роли в изменяющемся мире и выбирает для этого самостановление.</p>
+							</li>
+							<li>
+								<p>Прошел множество практик и школ, но так и не научился системно и целостно строить картину своего бытия.</p>
+							</li>
+							<li>
+								<p>Чувствует свой потенциал, но не нашёл способа для полной его реализации.</p>
+							</li>
+						</ul>
+						<span class="font-semibold">Добро пожаловать в эволюционное пространство EVOSPACE</span>
+					</div>
+					<div class="order-first w-full md:order-last md:w-1/2">
+						<img class="h-full w-full object-cover" src="/src/img/screen2_1.jpg" alt="" />
+					</div>
+				</div>
+				<div class="flex flex-col gap-4 pt-6 font-Roboto text-xl md:flex-row">
+					<div class="order-last w-full md:w-1/2">
+						<span class="font-semibold uppercase">В ПРОЦЕССЕ ОБУЧЕНИЯ</span>
+						<ul class="list-disc py-4 pl-8">
+							<li>
+								<p>МЫ ОКАЗЫВАЕМ ПОМОЩЬ в разблокировке сознания.</p>
+							</li>
+							<li>
+								<p>ДАЕМ ЗНАНИЯ о факторах внешнего влияния на сознание человека, основах самоуправления собственными внутренними ресурсами.</p>
+							</li>
+							<li>
+								<p>СПОСОБСТВУЕМ ФОРМИРОВАНИЮ вами внутреннего энергообмена как основы целостного Я.</p>
+							</li>
+							<li>
+								<p>ОКАЗЫВАЕМ СОДЕЙСТВИЕ в создании, инсталляции и запуске в действие личной программы саморазвития.</p>
+							</li>
+							<li>
+								<p>ОБУЧАЕМ динамической саморегуляции - основе самоуправления и коррекции.</p>
+							</li>
+							<li>
+								<p>ПОМОГАЕМ в определении целей дальнейшего развития.</p>
+							</li>
+						</ul>
+					</div>
+					<div class="order-first w-full md:w-1/2">
+						<img class="h-full w-full object-cover" src="/src/img/screen2_2.jpg" alt="" />
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- Практика -->
+		<section class="pt-8">
+			<div class="container mx-auto px-4">
+				<h2 class="text-center text-[36px] font-semibold uppercase">ПРАКТИКА КУРСА ПОЗВОЛИТ ВАМ</h2>
+				<div class="mt-6 flex justify-center">
+					<div class="w-[100px] border border-[#1f5bff] text-center"></div>
+				</div>
+				<div class="pl-5 pt-6 font-Roboto text-xl">
+					<ul class="list-disc py-4">
+						<li>
+							<p>настроить сознание на глубинное понимание собственной сути</p>
+						</li>
+						<li>
+							<p>ограничить негативное воздействие внешних информационных потоков</p>
+						</li>
+						<li>
+							<p>удалить негативные «вирусные» программы, блокирующие ваше развитие</p>
+						</li>
+						<li>
+							<p>сбалансировать психофизиологические процессы в организме</p>
+						</li>
+						<li>
+							<p>повысить КПД функционирования мозга, активируя нейрофизиологический потенциал</p>
+						</li>
+						<li>
+							<p>включить новые возможности сознания и тела, экстрасенсорные способности</p>
+						</li>
+						<li>
+							<p>сформировать программу личностного развития – нацелить вектор собственных достижений</p>
+						</li>
+						<li>
+							<p>выйти на качественно новый – эволюционный уровень мышления</p>
+						</li>
+					</ul>
+				</div>
+				<span class="text-xl font-semibold">Курс преподают: автор Метода внутренней энергоинформационной независимости Николенко Валерий Иванович и учителя школы EVOSPACE</span>
+				<div id="cards" class="mt-5 mt-[15x] flex flex-wrap justify-around gap-5">
+					<a href="#" class="card group relative h-[300px] w-full rounded-[5px] bg-menucolor px-4 text-center shadow-[0_0_10px_rgba(0,0,0,.4)] min-[502px]:w-[225px]">
+						<p class="text-[28px] text-black opacity-30 transition-opacity duration-300 group-hover:opacity-60">уровень 1</p>
+						<p class="mt-[8%] text-xl uppercase min-[502px]:mt-[30%] min-[502px]:text-3xl">Разбуди свой потенциал</p>
+					</a>
+					<a href="#" class="card group relative h-[300px] w-full rounded-[5px] bg-menucolor px-4 text-center shadow-[0_0_10px_rgba(0,0,0,.4)] min-[502px]:w-[225px]">
+						<p class="text-[28px] text-black opacity-30 transition-opacity duration-300 group-hover:opacity-60">уровень 2</p>
+						<p class="mt-[8%] text-xl uppercase min-[502px]:mt-[30%] min-[502px]:text-3xl">НОВОЕ СТАНОВЛЕНИЕ Я</p>
+					</a>
+					<a href="#" class="card group relative h-[300px] w-full rounded-[5px] bg-menucolor px-4 text-center shadow-[0_0_10px_rgba(0,0,0,.4)] min-[502px]:w-[225px]">
+						<p class="text-[28px] text-black opacity-30 transition-opacity duration-300 group-hover:opacity-60">уровень 3</p>
+						<p class="mt-[8%] text-xl uppercase min-[502px]:mt-[30%] min-[502px]:text-3xl">Реальность ЭВО сознания</p>
+					</a>
+					<a href="#" class="card group relative h-[300px] w-full rounded-[5px] bg-menucolor px-4 text-center shadow-[0_0_10px_rgba(0,0,0,.4)] min-[502px]:w-[225px]">
+						<p class="text-[28px] text-black opacity-30 transition-opacity duration-300 group-hover:opacity-60">уровень 4</p>
+						<p class="mt-[8%] text-xl uppercase min-[502px]:mt-[30%] min-[502px]:text-3xl">Школа мастеров</p>
+					</a>
+					<a href="#" class="card group relative h-[300px] w-full rounded-[5px] bg-menucolor px-4 text-center shadow-[0_0_10px_rgba(0,0,0,.4)] min-[502px]:w-[225px]">
+						<p class="text-[28px] text-black opacity-30 transition-opacity duration-300 group-hover:opacity-60">уровень 5</p>
+						<p class="mt-[8%] text-xl uppercase min-[502px]:mt-[30%] min-[502px]:text-3xl">Мастерская жизни</p>
+					</a>
+				</div>
+				<div class="mt-8 flex justify-center">
+					<button class="h-[60px] w-[200px] rounded-full bg-bluecolor font-Roboto text-xl uppercase text-menucolor transition-opacity hover:opacity-80">Подробнее</button>
+				</div>
+			</div>
+		</section>
+		<!-- Подолання -->
+		<section class="pt-8">
+			<div class="container mx-auto px-4">
+				<h2 class="text-center text-[36px] font-semibold uppercase">Подолання емоційної травми війни</h2>
+				<div class="mt-6 flex justify-center">
+					<div class="w-[100px] border border-[#1f5bff] text-center"></div>
+				</div>
+				<h3 class="mb-4 mt-6 text-center font-Roboto text-[28px] font-semibold text-bluecolor">Психологічно реабілітаційний курс самодопомоги</h3>
+				<div class="flex flex-col gap-4 pt-6 font-Roboto text-xl md:flex-row">
+					<div class="order-last w-full md:w-8/12">
+						<span class="font-semibold uppercase">Програма курсу:</span>
+						<ul class="list-disc py-4 pl-8">
+							<li>
+								<p>Усвідомлення внутрішньої реальності;</p>
+							</li>
+							<li>
+								<p>Уявлення про цілісну картину власного Я;</p>
+							</li>
+							<li>
+								<p>Оволодіння навичками саморегуляції (при гострих панічних станах,тривозі);</p>
+							</li>
+							<li>
+								<p>Психодинамічна регуляція тілесних процесів;</p>
+							</li>
+							<li>
+								<p>Особистісна програма – "ПРОЕКТ Я", спрямованого у майбутнє.</p>
+							</li>
+						</ul>
+					</div>
+					<div class="order-first w-full md:w-4/12">
+						<img class="h-full w-full rounded-xl object-cover shadow-[0_0_10px_rgba(0,0,0,.4)]" src="/src/img/rehabilitation.jpg" alt="" />
+					</div>
+				</div>
+				<div class="font-Roboto text-xl md:mt-5">
+					<p>
+						Реабілітація в загальноприйнятому сенсі – це заходи відновлення психічних та фізичних сил в людини спрямовані на повернення до попереднього стану перед травмуючою ситуацією. Враховуючи те,
+						що все змінюється, та й взагалі повернутися до того, що було неможливо. Потрібно, використовуючи ситуацію, що склалася та комплекс травмуючих та інших впливів шляхом якісної
+						психотерапевтичної. Психофізіолоічної дії разом із пацієнтом зробити стрибок до нового, більш якісного стану, як було раніше рівня свідомості та загального стану здоров’я. тобто корінна
+						трансформація свідомості, якості мислення, морально етичного стану. Свого роду надможливостей.
+					</p>
+				</div>
+			</div>
+		</section>
+		<!-- Отзывы -->
+		<section class="pt-8">
+			<div class="container mx-auto px-4">
+				<h2 class="text-center text-[36px] font-semibold uppercase">ОТЗЫВЫ</h2>
+				<div class="mt-6 flex justify-center">
+					<div class="w-[100px] border border-[#1f5bff] text-center"></div>
+				</div>
+				<!-- Reviews -->
+				<div class="review mt-6 h-full w-full overflow-hidden rounded-lg text-menucolor shadow-[0_0_10px_rgba(0,0,0,.4)]">
+					<div class="swiper-wrapper rounded-lg">
+						<!-- Review 1 -->
+						<div class="swiper-slide flex h-[400px] w-full bg-white">
+							<div class="grid w-7/12 md:w-8/12 grid-rows-[auto_1fr_auto] px-3 py-4 text-textcolor max-[599px]:w-full">
+								<div class="flex gap-4">
+									<div class="hidden h-16 w-16 max-[599px]:block">
+										<img class="h-full w-full rounded-md object-cover object-center" src="/src/img/comment1.jpg" alt="" />
+									</div>
+									<span class="text-[24px] font-semibold">Иван Иванов</span>
+								</div>
+								<p class="overflow-auto py-4 font-Roboto text-base sm:text-xl">
+									Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas vel et, quisquam dicta dolore iure at assumenda minus voluptatem consectetur neque quidem, eos eaque reprehenderit. Cum
+									fugiat distinctio vero consequatur!
+								</p>
+								<div class="hidden w-full justify-center max-[599px]:flex">
+									<button class="flex h-[50px] w-[200px] items-center justify-center gap-2 rounded-full bg-bluecolor font-Roboto text-xl uppercase text-menucolor transition-opacity hover:opacity-80">
+										<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-6 w-6">
+											<path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+											<path stroke-linecap="round" stroke-linejoin="round" d="M15.91 11.672a.375.375 0 010 .656l-5.603 3.113a.375.375 0 01-.557-.328V8.887c0-.286.307-.466.557-.327l5.603 3.112z" />
+										</svg>
+										Видеоотзыв
+									</button>
+								</div>
+							</div>
+							<div class="relative w-5/12 md:w-4/12 max-[599px]:hidden">
+								<img class="h-full w-full object-cover object-center" src="/src/img/comment1.jpg" alt="" />
+								<div class="absolute bottom-4 right-4">
+									<button class="flex h-[60px] w-[190px] items-center justify-center gap-2 rounded-full bg-bluecolor font-Roboto text-xl uppercase text-menucolor transition-opacity hover:opacity-80">
+										<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-6 w-6">
+											<path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+											<path stroke-linecap="round" stroke-linejoin="round" d="M15.91 11.672a.375.375 0 010 .656l-5.603 3.113a.375.375 0 01-.557-.328V8.887c0-.286.307-.466.557-.327l5.603 3.112z" />
+										</svg>
+										Видеоотзыв
+									</button>
+								</div>
+							</div>
+						</div>
+						<!-- Review 2 -->
+						<div class="swiper-slide flex h-[400px] w-full bg-white">
+							<div class="grid w-7/12 md:w-8/12 grid-rows-[auto_1fr_auto] px-3 py-4 text-textcolor max-[599px]:w-full">
+								<div class="flex gap-4">
+									<div class="hidden h-16 w-16 max-[599px]:block">
+										<img class="h-full w-full rounded-md object-cover object-center" src="/src/img/teacher1.jpg" alt="" />
+									</div>
+									<span class="text-[24px] font-semibold">Дарья Петрова</span>
+								</div>
+								<p class="overflow-auto py-4 font-Roboto text-base sm:text-xl">
+									Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas vel et, quisquam dicta dolore iure at assumenda minus voluptatem consectetur neque quidem, eos eaque reprehenderit. Cum
+									fugiat distinctio vero consequatur!
+								</p>
+								<div class="hidden w-full justify-center max-[599px]:flex">
+									<button class="flex h-[50px] w-[200px] items-center justify-center gap-2 rounded-full bg-bluecolor font-Roboto text-xl uppercase text-menucolor transition-opacity hover:opacity-80">
+										<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-6 w-6">
+											<path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+											<path stroke-linecap="round" stroke-linejoin="round" d="M15.91 11.672a.375.375 0 010 .656l-5.603 3.113a.375.375 0 01-.557-.328V8.887c0-.286.307-.466.557-.327l5.603 3.112z" />
+										</svg>
+										Видеоотзыв
+									</button>
+								</div>
+							</div>
+							<div class="relative w-5/12 md:w-4/12 max-[599px]:hidden">
+								<img class="h-full w-full object-cover object-center" src="/src/img/teacher1.jpg" alt="" />
+								<div class="absolute bottom-4 right-4">
+									<button class="flex h-[60px] w-[190px] items-center justify-center gap-2 rounded-full bg-bluecolor font-Roboto text-xl uppercase text-menucolor transition-opacity hover:opacity-80">
+										<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-6 w-6">
+											<path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+											<path stroke-linecap="round" stroke-linejoin="round" d="M15.91 11.672a.375.375 0 010 .656l-5.603 3.113a.375.375 0 01-.557-.328V8.887c0-.286.307-.466.557-.327l5.603 3.112z" />
+										</svg>
+										Видеоотзыв
+									</button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="relative mt-4 flex h-16 items-center justify-center gap-4">
+					<div class="swiper-pagination absolute flex h-16 items-center justify-center"></div>
+					<div class="swiper-button-prev h-8"></div>
+					<div class="swiper-button-next h-8"></div>
+				</div>
+
+				<div class="mt-6 flex justify-center">
+					<button class="h-[60px] w-[200px] rounded-full bg-bluecolor font-Roboto text-xl uppercase text-menucolor transition-opacity hover:opacity-80">Все отзывы</button>
+				</div>
+			</div>
+		</section>
+
+		<!-- События -->
+		<section class="pt-8">
+			<div class="container mx-auto px-4">
+				<h2 class="text-center text-[36px] font-semibold uppercase">События</h2>
+				<div class="mt-6 flex justify-center">
+					<div class="w-[100px] border border-[#1f5bff] text-center"></div>
+				</div>
+				<!-- Events -->
+				<div class="events mt-6 h-full w-full overflow-hidden rounded-lg text-menucolor shadow-[0_0_10px_rgba(0,0,0,.4)]">
+					<div class="swiper-wrapper rounded-lg">
+						<!-- Event 1 -->
+						<div class="swiper-slide flex h-[400px] w-full bg-white">
+							<div class="relative w-[40%] max-[599px]:hidden">
+								<img class="h-full w-full object-cover object-center" src="/src/img/rehabilitation.jpg" alt="" />
+							</div>
+							<div class="grid w-[60%] grid-rows-[auto_1fr_auto] px-3 py-4 text-textcolor max-[599px]:w-full">
+								<div class="flex gap-4">
+									<div class="hidden h-16 w-16 max-[599px]:block">
+										<img class="h-full w-full rounded-md object-cover object-center" src="/src/img/rehabilitation.jpg" alt="" />
+									</div>
+									<span class="text-[24px] font-semibold">Новый курс - Преодоление эмоциональной травмы войны</span>
+								</div>
+								<p class="overflow-auto py-4 font-Roboto text-base sm:text-xl">
+									Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas vel et, quisquam dicta dolore iure at assumenda minus voluptatem consectetur neque quidem, eos eaque reprehenderit. Cum
+									fugiat distinctio vero consequatur!
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- <div class="relative mt-4 flex h-16 items-center justify-center gap-4">
+					<div class="swiper-pagination-events relative flex h-16 items-center justify-center"></div>
+					<div class="swiper-button-prev-events h-8"></div>
+					<div class="swiper-button-next-events h-8"></div>
+				</div> -->
+
+				<!-- <div class="mt-6 flex justify-center">
+					<button class="h-[60px] w-[200px] rounded-full bg-bluecolor font-Roboto text-xl uppercase text-menucolor transition-opacity hover:opacity-80">Все отзывы</button>
+				</div> -->
+			</div>
+		</section>
+
+		<!-- Включайся -->
+		<section class="pb-10 pt-8">
+			<div class="container mx-auto px-4">
+				<h3 class="text-center font-Roboto text-[28px] font-semibold text-bluecolor">Включайся вместе с нами</h3>
+				<div class="mb-6 mt-10 flex w-full gap-8 max-[968px]:flex-col">
+					<div class="relative h-[340px] w-1/2 max-[968px]:w-full">
+						<div class="PicBefore"></div>
+						<img class="h-full w-full object-cover object-center" src="/src/img/course1.jpg" alt="Курс №1" />
+						<p class="absolute left-0 top-0 z-[2] flex h-full w-full items-center justify-center p-4 text-base leading-9 text-menucolor md:text-xl">
+							Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aspernatur assumenda nostrum mollitia itaque voluptates ea quibusdam omnis sequi vitae fugiat
+						</p>
+					</div>
+					<div class="relative h-[340px] w-1/2 max-[968px]:w-full">
+						<div class="PicBefore"></div>
+						<img class="h-full w-full object-cover object-center" src="/src/img/course2.jpg" alt="Курс №2" />
+						<p class="absolute left-0 top-0 z-[2] flex h-full w-full items-center justify-center p-4 text-base leading-9 text-menucolor md:text-xl">
+							Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aspernatur assumenda nostrum mollitia itaque voluptates ea quibusdam omnis sequi vitae fugiat Lorem ipsum dolor sit, amet
+							consectetur adipisicing elit. Aspernatur assumenda nostrum mollitia itaque voluptates ea quibusdam omnis sequi vitae fugiat
+						</p>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<footer class="absolute bottom-0 h-[50px] w-full bg-textcolor text-menucolor">
+			<div class="container mx-auto h-full px-4 text-base sm:text-xl">
+				<div class="flex h-full items-center justify-between">
+					<div id="copyrightDate">EvoSpace</div>
+					<a class="flex items-center gap-2" href="mailto:evobiospace@gmail.com">
+						<svg class="hidden h-6 w-6 sm:block" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+							<path
+								stroke-linecap="round"
+								stroke-linejoin="round"
+								d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"
+							/>
+						</svg>
+						evobiospace@gmail.com
+					</a>
+				</div>
+			</div>
+		</footer>
+		<script defer src="/src/js/cdn.min.js"></script>
+		<script src="/src/js/main.js"></script>
+	</body>
+</html>
