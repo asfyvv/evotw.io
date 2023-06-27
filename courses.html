@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<link rel="shortcut icon" href="/src/img/favicon.svg" type="image/x-icon" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>EvoSpace | Вселенная твоего сознания</title>
+		<meta name="description" content="Мы предлагаем обучение для тех, кто хочет научиться управлять собой и своей жизнью." />
+		<!-- <link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;400;600;700&family=Roboto:wght@400;600;700&display=swap" rel="stylesheet" /> -->
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+		<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+		<link href="/dist/output.css" rel="stylesheet" />
+	</head>
+	<body class="relative grid min-h-screen select-none grid-rows-page bg-mainbg font-Oswald text-textcolor" x-data="{ openMenu : false }" :class="openMenu ? 'overflow-hidden' : 'overflow-visible'">
+		<!-- Навигация -->
+		<div class="">
+			<header class="fixed z-30 flex h-[70px] w-full flex-col items-center gap-5 bg-black text-lg text-menucolor">
+				<div class="container flex w-full justify-between px-4">
+					<!-- logo -->
+					<a class="h-[70px]" href="#">
+						<img class="h-full" src="/src/img/logo.svg" alt="logo" />
+					</a>
+					<!-- Кнопка мобильного меню -->
+					<div class="flex items-center md:hidden">
+						<button class="uppercase" @click="openMenu = !openMenu" :aria-expanded="openMenu" aria-controls="mobile-navigation" aria-label="Navigation Menu">
+							<svg :class="openMenu ? 'hidden' : 'block'" x-cloak xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-6 w-6">
+								<path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+							</svg>
+							<svg :class="openMenu ? 'block' : 'hidden'" x-cloak xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-6 w-6">
+								<path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+							</svg>
+						</button>
+					</div>
+					<!-- Навигация меню -->
+					<nav class="hidden md:flex text-base lg:text-[18px]">
+						<ul class="flex items-center gap-8 uppercase">
+							<li class="">
+								<a href="/src/index.html" class="menu-link selected relative block" aria-current="true">Главная</a>
+							</li>
+							<li class="">
+								<a href="/src/about.html" class="menu-link relative block">О нас</a>
+							</li>
+							<li class="">
+								<a href="/src/courses.html" class="menu-link relative block">Обучение</a>
+							</li>
+							<li class="">
+								<a href="/src/projects.html" class="menu-link relative block">Проекты</a>
+							</li>
+							<li class="">
+								<a href="/src/services.html" class="menu-link relative block">Услуги</a>
+							</li>
+							<li class="">
+								<a href="/src/events.html" class="menu-link relative block">События</a>
+							</li>
+							<li class="">
+								<a href="/src/contacts.html" class="menu-link relative block">Контакты</a>
+							</li>
+						</ul>
+					</nav>
+					<!-- Телефон -->
+					<a class="flex items-center justify-center gap-2 max-[1023px]:hidden text-base lg:text-[18px]" href="tel:+380675555555">
+						<svg class="h-5" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-6 w-6">
+							<path
+								d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z"
+							/>
+						</svg>
+						+38 (067) 555-55-55
+					</a>
+				</div>
+			</header>
+			<!-- Мобильная навигация -->
+			<!-- <nav id="mobile-navigation" class="fixed bottom-0 left-0 right-0 top-16 z-20 bg-black tracking-wider text-menucolor md:hidden" :class="openMenu ? 'visible' : 'invisible'" x-cloak>
+				<ul class="flex flex-col items-center justify-center gap-5 px-4 pt-6 text-lg uppercase transition-all duration-300" :class="openMenu ? 'translate-y-0' : '-translate-y-full'"> -->
+			<nav id="mobile-navigation" class="fixed bottom-0 left-0 right-0 top-16 z-20 bg-black tracking-wider text-menucolor md:hidden transition-all duration-700" :class="openMenu ? 'translate-y-0' : '-translate-y-full'" x-cloak>
+				<ul class="flex flex-col items-center justify-center gap-5 px-4 pt-6 text-lg uppercase transition-all duration-700">
+					<li class="">
+						<a href="/src/index.html" class="" @click="openMenu = !openMenu">Главная</a>
+					</li>
+					<li class="">
+						<a href="/src/about.html" class="" @click="openMenu = !openMenu">О нас</a>
+					</li>
+					<li class="">
+						<a href="/src/courses.html" class="" @click="openMenu = !openMenu">Обучение</a>
+					</li>
+					<li class="">
+						<a href="/src/projects.html" class="" @click="openMenu = !openMenu">Проекты</a>
+					</li>
+					<li class="">
+						<a href="/src/services.html" class="" @click="openMenu = !openMenu">Услуги</a>
+					</li>
+					<li class="">
+						<a href="/src/events.html" class="" @click="openMenu = !openMenu">События</a>
+					</li>
+					<li class="">
+						<a href="/src/contacts.html" class="" @click="openMenu = !openMenu">Контакты</a>
+					</li>
+					<li class="pt-6">
+						<a class="flex items-center justify-center gap-2" href="tel:+380675555555">
+							<svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-6 w-6">
+								<path
+									d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z"
+								/>
+							</svg>
+							+38 (067) 555-55-55
+						</a>
+					</li>
+				</ul>
+			</nav>
+		</div>
+		<!-- Первый экран -->
+		<section class="pt-24">
+			<div class="container mx-auto px-4">
+				<h2 class="text-center text-[28px] font-semibold uppercase sm:text-[36px]">В ПРОГРАММЕ КУРСА ВАС ЖДЕТ</h2>
+				<div class="mt-6 flex justify-center">
+					<div class="w-[100px] border border-[#1f5bff] text-center"></div>
+				</div>
+				<div class="my-6 flex flex-wrap justify-around gap-8 sm:gap-16">
+					<div
+						class="courseBefore relative flex min-h-[130px] w-full flex-col items-center justify-center rounded-md bg-menucolor text-center font-Roboto text-xl shadow-[0_0_10px_rgba(0,0,0,.4)] sm:h-[200px] sm:w-[200px] sm:min-w-[200px]"
+					>
+						<p class="p-2">Предварительный интерактивный вебинар, ответы на вопросы по Методу</p>
+					</div>
+					<div
+						class="courseBefore relative flex min-h-[130px] w-full flex-col items-center justify-center rounded-md bg-menucolor text-center font-Roboto text-xl shadow-[0_0_10px_rgba(0,0,0,.4)] sm:h-[200px] sm:w-[200px] sm:min-w-[200px]"
+					>
+						<p class="p-2">Онлайн курс - 5 групповых и 3 индивидуальных занятия</p>
+					</div>
+					<div
+						class="courseBefore relative flex min-h-[130px] w-full flex-col items-center justify-center rounded-md bg-menucolor text-center font-Roboto text-xl shadow-[0_0_10px_rgba(0,0,0,.4)] sm:h-[200px] sm:w-[200px] sm:min-w-[200px]"
+					>
+						<p class="p-2">Поддержка кураторов в закрытой мессенджер группе</p>
+					</div>
+					<div
+						class="relative flex min-h-[130px] w-full flex-col items-center justify-center rounded-md bg-menucolor text-center font-Roboto text-xl shadow-[0_0_10px_rgba(0,0,0,.4)] sm:h-[200px] sm:w-[200px] sm:min-w-[200px]"
+					>
+						<p class="p-2">Индивидуальный подход: настройки по включению сознания. Персональные домашние задания</p>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- Второй экран -->
+		<section class="pt-8">
+			<div class="container mx-auto px-4">
+				<h2 class="text-center text-[28px] font-semibold uppercase sm:text-[36px]">КУРС УРОВНИ</h2>
+				<div class="mt-6 flex justify-center">
+					<div class="w-[100px] border border-[#1f5bff] text-center"></div>
+				</div>
+				<!-- Level 1 -->
+				<div class="my-8">
+					<div class="">
+						<div class="float-left mb-1 mr-8 h-[140px] w-full sm:h-[135px] sm:w-[200px] md:h-[200px] md:w-[300px]">
+							<img class="h-full w-full object-cover object-center" src="/src/img/cours1.jpg" alt="" />
+						</div>
+						<div class="">
+							<p class="text-xl font-semibold text-bluecolor sm:text-[28px]">1 РАЗБУДИ СВОЙ ПОТЕНЦИАЛ</p>
+							<p class="sb:text-xl py-2 font-Roboto text-lg">
+								На первом этапе - базовом уровне - ученик очищается от негативных информационных наслоений прошлого, активизирует скрытые ресурсы организма, формирует приоритетные направления
+								самосовершенствования с целью приобретения более высокого уровня саморегулирования.
+							</p>
+							<p class="sb:text-xl py-2 font-Roboto text-lg">
+								Умения и качественные достижения учеников по разблокировке сознания, включению целостного Я и саморегуляции создают главные предпосылки для овладения собственной реальностью.
+							</p>
+						</div>
+					</div>
+					<div class="inline-block">
+						<h3 class="py-2 text-center text-xl font-semibold uppercase text-bluecolor sm:text-2xl">СОДЕРЖАНИЕ КУРСА</h3>
+						<ul class="list-disc pl-6">
+							<li class="sb:text-xl font-Roboto text-lg">Понятие тонкомерных уровней, их влияние на сознание человека</li>
+							<li class="sb:text-xl font-Roboto text-lg">Освоение внутренней реальности, ее коррекция и индивидуальные методики самоуправления</li>
+							<li class="sb:text-xl font-Roboto text-lg">Сознание и тело. Устранение блоков на пути к целостному Я</li>
+							<li class="sb:text-xl font-Roboto text-lg">Инновационные принципы психофизиологического регулирования - внутренний энергетический контур</li>
+							<li class="sb:text-xl font-Roboto text-lg">Личная программа - прикладная стратегия развития</li>
+							<li class="sb:text-xl font-Roboto text-lg">Образное обустройство собственной внутренней реальности - виртуальная реальность становится действительностью</li>
+							<li class="sb:text-xl font-Roboto text-lg">Ментальная саморегуляция</li>
+							<li class="sb:text-xl font-Roboto text-lg">Динамическая психо-физическая саморегуляция</li>
+						</ul>
+					</div>
+					<div class="mt-2 mb-10 flex justify-center">
+						<button class="h-[60px] w-[200px] rounded-full bg-bluecolor font-Roboto text-xl uppercase text-menucolor transition-opacity hover:opacity-80">Заказать курс</button>
+					</div>
+				</div>
+				<!-- Level 2 -->
+				<div class="my-8">
+					<div class="">
+						<div class="float-left mb-1 mr-8 h-[140px] w-full sm:h-[135px] sm:w-[200px] md:h-[200px] md:w-[300px]">
+							<img class="h-full w-full object-cover object-center" src="/src/img/cours2.jpg" alt="" />
+						</div>
+						<div class="">
+							<p class="text-xl font-semibold text-bluecolor sm:text-[28px]">2 НОВОЕ СТАНОВЛЕНИЕ Я</p>
+							<p class="sb:text-xl py-2 font-Roboto text-lg">
+								Ученики продолжают практику активной работы сознания и приобретают навыки качественного самопрограммирования, самоидентификации и самостановления
+							</p>
+						</div>
+					</div>
+
+					<div class="inline-block">
+						<h3 class="py-2 text-center text-xl font-semibold uppercase text-bluecolor sm:text-2xl">СОДЕРЖАНИЕ КУРСА</h3>
+						<ul class="list-disc pl-6">
+							<li class="sb:text-xl font-Roboto text-lg">Проведение системного анализа Я, новое прочтение «карты собственного Я»</li>
+							<li class="sb:text-xl font-Roboto text-lg">Дальнейшее развитие навыков работы со своим сознанием и телом</li>
+							<li class="sb:text-xl font-Roboto text-lg">
+								Совершенствование навыков самоуправления: приоритетная комплектация и активация внутренних ресурсов направление своих усилий на стратегические уровни индивидуальных стремлений Практика
+								работы с конкретными органами и системами
+							</li>
+							<li class="sb:text-xl font-Roboto text-lg">Совершенствование практики саморегуляции в движении</li>
+							<li class="sb:text-xl font-Roboto text-lg">Раскрытие творческих потенциалов: грани таланта, безграничность способностей</li>
+							<li class="sb:text-xl font-Roboto text-lg">Личностный профиль – коррекция отдельных черт характера: психический баланс, стрессоустойчивость</li>
+							<li class="sb:text-xl font-Roboto text-lg">Основы внутренней системы выявления и устранения угроз - практическая установка антивирусной программы</li>
+						</ul>
+					</div>
+					<div class="mt-2 mb-10 flex justify-center">
+						<button class="h-[60px] w-[200px] rounded-full bg-bluecolor font-Roboto text-xl uppercase text-menucolor transition-opacity hover:opacity-80">Заказать курс</button>
+					</div>
+				</div>
+				<!-- Level 3 -->
+				<div class="my-8">
+					<div class="">
+						<div class="float-left mb-1 mr-8 h-[140px] w-full sm:h-[135px] sm:w-[200px] md:h-[200px] md:w-[300px]">
+							<img class="h-full w-full object-cover object-center" src="/src/img/cours3.jpg" alt="" />
+						</div>
+						<div class="">
+							<p class="text-xl font-semibold text-bluecolor sm:text-[28px]">3 РЕАЛЬНОСТЬ ЭВО СОЗНАНИЯ</p>
+							<p class="sb:text-xl py-2 font-Roboto text-lg">
+								Третий уровень наполнен практическими занятиями, направленными на повышение устойчивости, разработку личного плана дальнейшего продвижения с учетом специфики внутреннего Я стремления, а также на развитие интра - и экстрасенсорных навыков и способностей.
+							</p>
+						</div>
+					</div>
+					<div class="inline-block">
+						<h3 class="py-2 text-center text-xl font-semibold uppercase text-bluecolor sm:text-2xl">СОДЕРЖАНИЕ КУРСА</h3>
+					<ul class="list-disc pl-6">
+						<li class="sb:text-xl font-Roboto text-lg">Выявление индивидуальной предрасположенности – спецификации на основе психологического профиля, включение индивидуальных особенностей и настройка на реализацию в полной мере</li>
+						<li class="sb:text-xl font-Roboto text-lg">Формирование новых навыков при взаимодействии с внешней информацией – анализ поступающей информации</li>
+						<li class="sb:text-xl font-Roboto text-lg">Работа с внешней информацией. Принципы и правила собственной безопасности в работе с информацией</li>
+						<li class="sb:text-xl font-Roboto text-lg">Практики работы с людьми (диагностика/лечение), работа с удаленными объектами, а также с фотографиями и предметами</li>
+						<li class="sb:text-xl font-Roboto text-lg">Работа с интегральными обучающими устройствами как дополнительный ресурс для получения нового знания, преодоления как физиологических, так и психологических проблем в целях развития и трансформации личности</li>
+						<li class="sb:text-xl font-Roboto text-lg">Восполнение личностного ресурса, развитие себя - развитие других</li>
+					</ul>
+					</div>
+					<div class="mt-2 mb-10 flex justify-center">
+						<button class="h-[60px] w-[200px] rounded-full bg-bluecolor font-Roboto text-xl uppercase text-menucolor transition-opacity hover:opacity-80">Заказать курс</button>
+					</div>
+				</div>
+				<!-- Level 4 -->
+				<div class="my-8">
+					<div class="">
+						<div class="float-left mb-1 mr-8 h-[140px] w-full sm:h-[135px] sm:w-[200px] md:h-[200px] md:w-[300px]">
+							<img class="h-full w-full object-cover object-center" src="/src/img/cours4.jpg" alt="" />
+						</div>
+						<div class="">
+							<p class="text-xl font-semibold text-bluecolor sm:text-[28px]">4 ШКОЛА МАСТЕРОВ</p>
+							<p class="sb:text-xl py-2 font-Roboto text-lg">
+								На четвертом уровне ученики получают навыки структурированного вывода информации, работы с ней, а также узнают тонкости и получают практику работы с другими людьми с позиции учителя.
+							</p>
+						</div>
+					</div>
+					<div class="inline-block">
+						<h3 class="py-2 text-center text-xl font-semibold uppercase text-bluecolor sm:text-2xl">СОДЕРЖАНИЕ КУРСА</h3>
+					<ul class="list-disc pl-6">
+						<li class="sb:text-xl font-Roboto text-lg">Практика целостного восприятия и мышления</li>
+						<li class="sb:text-xl font-Roboto text-lg">Анализ опыта получения внутренней информации. Сенсорика и логика. Как мыслит мозг</li>
+						<li class="sb:text-xl font-Roboto text-lg">Особенности работы с внутренней информацией. Совершенствование навыков по получению, переработке, усвоению и использованию внутренней информации</li>
+						<li class="sb:text-xl font-Roboto text-lg">Понятие внутреннего текста, его структура и особенности содержания. Методы работы с текстом</li>
+						<li class="sb:text-xl font-Roboto text-lg">Практика работы с человеком в контексте методологии</li>
+						<li class="sb:text-xl font-Roboto text-lg">Личный уровень мастерства. Нравственно этический уровень и программа учителя</li>
+						<li class="sb:text-xl font-Roboto text-lg">Этапы работы с клиентом. Личностный тип: энергоинформационный профиль, прогноз достижений, стратегия работы</li>
+						<li class="sb:text-xl font-Roboto text-lg">Вопросы теории и практика работы с конституциональными типами. Клиенториентированный подход</li>
+					</ul>
+					</div>
+					<div class="mt-2 mb-10 flex justify-center">
+						<button class="h-[60px] w-[200px] rounded-full bg-bluecolor font-Roboto text-xl uppercase text-menucolor transition-opacity hover:opacity-80">Заказать курс</button>
+					</div>
+				</div>
+
+				<!-- Level 5 -->
+				<div class="my-8">
+					<div class="">
+						<div class="float-left mb-1 mr-8 h-[140px] w-full sm:h-[135px] sm:w-[200px] md:h-[200px] md:w-[300px]">
+							<img class="h-full w-full object-cover object-center" src="/src/img/cours5.jpg" alt="" />
+						</div>
+						<div class="">
+							<p class="text-xl font-semibold text-bluecolor sm:text-[28px]">5 МАСТЕРСКАЯ ЖИЗНИ</p>
+							<p class="sb:text-xl py-2 font-Roboto text-lg">
+								На этом уровне происходит формирование целостного образа бытия человека, в ходе которого ученики осваивают навыки управления сценариями будущего и личного влияния на окружающие информационные поля.
+							</p>
+						</div>
+					</div>
+					<div class="inline-block">
+						<h3 class="py-2 text-center text-xl font-semibold uppercase text-bluecolor sm:text-2xl">СОДЕРЖАНИЕ КУРСА</h3>
+					<ul class="list-disc pl-6">
+						<li class="sb:text-xl font-Roboto text-lg">Вход во внутреннее пространство Я с новой задачей – коррекция и формирование новых личностных программ</li>
+						<li class="sb:text-xl font-Roboto text-lg">Совершенствование навыков и способностей внутренней трансформации</li>
+						<li class="sb:text-xl font-Roboto text-lg">Внутренний диалог - форма конструктивного рационального мышления</li>
+						<li class="sb:text-xl font-Roboto text-lg">Телесная практика: подбор индивидуальной универсальной техники работы с собой</li>
+						<li class="sb:text-xl font-Roboto text-lg">Проблематика и сложности самоопределения в контексте парадигмы «Я – социум»</li>
+						<li class="sb:text-xl font-Roboto text-lg">Становление новой внутренней позитивной философии</li>
+						<li class="sb:text-xl font-Roboto text-lg">Проявление способностей выявлять наиболее оптимальные сценарии личного будущего</li>
+						<li class="sb:text-xl font-Roboto text-lg">Самостановление – открытие и развитие индивидуального эволюционного периметра</li>
+						<li class="sb:text-xl font-Roboto text-lg">Структуризация внешнего информационного обеспечения: формирование каналов индивидуального и коллективного поля</li>
+					</ul>
+					</div>
+					<div class="mt-2 mb-10 flex justify-center">
+						<button class="h-[60px] w-[200px] rounded-full bg-bluecolor font-Roboto text-xl uppercase text-menucolor transition-opacity hover:opacity-80">Заказать курс</button>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- Footer -->
+		<footer class="h-[50px] w-full bg-textcolor text-menucolor">
+			<div class="container mx-auto h-full px-4 text-base sm:text-xl">
+				<div class="flex h-full items-center justify-between">
+					<div id="copyrightDate">EvoSpace</div>
+					<a class="flex items-center gap-2" href="mailto:evobiospace@gmail.com">
+						<svg class="hidden h-6 w-6 sm:block" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+							<path
+								stroke-linecap="round"
+								stroke-linejoin="round"
+								d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"
+							/>
+						</svg>
+						evobiospace@gmail.com
+					</a>
+				</div>
+			</div>
+		</footer>
+		<script defer src="/src/js/cdn.min.js"></script>
+		<script src="/src/js/main.js"></script>
+	</body>
+</html>
