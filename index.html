@@ -116,7 +116,49 @@
 			</nav>
 		</div>
 		<!-- Первый экран -->
-		<section class="h-screen w-full">
+		<section class="relative h-screen w-full">
+			<div
+				class="absolute bottom-10 left-10 z-10 hidden h-[25%] max-h-[350px] min-h-[200px] w-[30%] min-w-[350px] max-w-[450px] overflow-hidden rounded-lg bg-white shadow-[0_0_10px_rgba(255,255,255,.4)] transition-all hover:shadow-[0_0_20px_rgba(255,255,255,.4)] md:block"
+			>
+				<div class="introEvents h-full w-full overflow-hidden rounded-lg text-menucolor">
+					<div class="swiper-wrapper rounded-lg">
+						<!-- Event 1 -->
+						<div class="swiper-slide">
+							<div class="flex h-full w-full">
+								<div class="h-full w-[40%]">
+									<img class="h-full w-full object-cover object-center" src="img/rehabilitation.jpg" alt="" />
+								</div>
+								<div class="flex w-[60%] flex-col items-start justify-between px-2 py-2 text-textcolor">
+									<div class="">
+										<span class="text-lg font-semibold">Новый курс - Преодоление эмоциональной травмы войны</span>
+									</div>
+									<div class="flex w-full justify-center">
+										<button class="rounded-full bg-bluecolor px-5 py-2 font-Roboto text-lg uppercase text-menucolor transition-opacity hover:opacity-80">Подробнее</button>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- Event 2 -->
+						<div class="swiper-slide">
+							<div class="flex h-full w-full">
+								<div class="h-full w-[40%]">
+									<img class="h-full w-full object-cover object-center" src="img/Course1.jpg" alt="" />
+								</div>
+								<div class="flex w-[60%] flex-col items-start justify-between px-2 py-2 text-textcolor">
+									<div class="">
+										<span class="text-lg font-semibold">Курс - Разбуди свой потенциал</span>
+									</div>
+									<div class="flex w-full justify-center">
+										<button class="rounded-full bg-bluecolor px-5 py-2 font-Roboto text-lg uppercase text-menucolor transition-opacity hover:opacity-80">Подробнее</button>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="swiper-button-prev h-10 w-10 rounded-lg transition-all hover:bg-mainbg"></div>
+					<div class="swiper-button-next h-10 w-10 rounded-lg transition-all hover:bg-mainbg"></div>
+				</div>
+			</div>
 			<div class="swiper h-full w-full text-menucolor">
 				<div class="swiper-wrapper">
 					<div class="swiper-slide PicBefore w-full bg-[url('../img/bg1.jpg')] bg-cover bg-no-repeat">
@@ -342,10 +384,10 @@
 				</div>
 				<!-- Reviews -->
 				<div class="review mt-6 h-full w-full overflow-hidden rounded-lg text-menucolor shadow-[0_0_10px_rgba(0,0,0,.4)]">
-					<div class="swiper-wrapper rounded-lg">
+					<div class="swiper-wrapper rounded-lg bg-transparent">
 						<!-- Review 1 -->
-						<div class="swiper-slide flex h-[400px] w-full bg-white">
-							<div class="grid w-7/12 grid-rows-[auto_1fr_auto] px-3 py-4 text-textcolor max-[599px]:w-full md:w-8/12">
+						<div class="swiper-slide flex h-[400px] w-full overflow-hidden rounded-lg bg-white">
+							<div class="grid w-7/12 grid-rows-[auto_1fr_auto] px-3 py-4 text-textcolor max-[599px]:w-full md:w-8/12 lg:w-7/12">
 								<div class="flex gap-4">
 									<div class="hidden h-16 w-16 max-[599px]:block">
 										<img class="h-full w-full rounded-md object-cover object-center" src="img/comment1.jpg" alt="" />
@@ -366,7 +408,7 @@
 									</button>
 								</div>
 							</div>
-							<div class="relative w-5/12 max-[599px]:hidden md:w-4/12">
+							<div class="relative w-5/12 max-[599px]:hidden md:w-4/12 lg:w-5/12">
 								<img class="h-full w-full object-cover object-center" src="img/comment1.jpg" alt="" />
 								<div class="absolute bottom-4 right-4">
 									<button class="flex h-[60px] w-[190px] items-center justify-center gap-2 rounded-full bg-bluecolor font-Roboto text-xl uppercase text-menucolor transition-opacity hover:opacity-80">
@@ -380,13 +422,13 @@
 							</div>
 						</div>
 						<!-- Review 2 -->
-						<div class="swiper-slide flex h-[400px] w-full bg-white">
-							<div class="grid w-7/12 grid-rows-[auto_1fr_auto] px-3 py-4 text-textcolor max-[599px]:w-full md:w-8/12">
+						<div class="swiper-slide flex h-[400px] w-full overflow-hidden rounded-lg bg-white">
+							<div class="grid w-7/12 grid-rows-[auto_1fr_auto] px-3 py-4 text-textcolor max-[599px]:w-full md:w-8/12 lg:w-7/12">
 								<div class="flex gap-4">
 									<div class="hidden h-16 w-16 max-[599px]:block">
 										<img class="h-full w-full rounded-md object-cover object-center" src="img/teacher1.jpg" alt="" />
 									</div>
-									<span class="text-[24px] font-semibold">Дарья Петрова</span>
+									<span class="text-[24px] font-semibold">Петр петров</span>
 								</div>
 								<p class="overflow-auto py-4 font-Roboto text-base sm:text-xl">
 									Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas vel et, quisquam dicta dolore iure at assumenda minus voluptatem consectetur neque quidem, eos eaque reprehenderit. Cum
@@ -402,7 +444,7 @@
 									</button>
 								</div>
 							</div>
-							<div class="relative w-5/12 max-[599px]:hidden md:w-4/12">
+							<div class="relative w-5/12 max-[599px]:hidden md:w-4/12 lg:w-5/12">
 								<img class="h-full w-full object-cover object-center" src="img/teacher1.jpg" alt="" />
 								<div class="absolute bottom-4 right-4">
 									<button class="flex h-[60px] w-[190px] items-center justify-center gap-2 rounded-full bg-bluecolor font-Roboto text-xl uppercase text-menucolor transition-opacity hover:opacity-80">
@@ -415,14 +457,85 @@
 								</div>
 							</div>
 						</div>
+						<!-- Review 3 -->
+						<div class="swiper-slide flex h-[400px] w-full overflow-hidden rounded-lg bg-white">
+							<div class="grid w-7/12 grid-rows-[auto_1fr_auto] px-3 py-4 text-textcolor max-[599px]:w-full md:w-8/12 lg:w-7/12">
+								<div class="flex gap-4">
+									<div class="hidden h-16 w-16 max-[599px]:block">
+										<img class="h-full w-full rounded-md object-cover object-center" src="img/teacher2.jpg" alt="" />
+									</div>
+									<span class="text-[24px] font-semibold">Василий Васильев</span>
+								</div>
+								<p class="overflow-auto py-4 font-Roboto text-base sm:text-xl">
+									Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas vel et, quisquam dicta dolore iure at assumenda minus voluptatem consectetur neque quidem, eos eaque reprehenderit. Cum
+									fugiat distinctio vero consequatur!
+								</p>
+								<div class="hidden w-full justify-center max-[599px]:flex">
+									<button class="flex h-[50px] w-[200px] items-center justify-center gap-2 rounded-full bg-bluecolor font-Roboto text-xl uppercase text-menucolor transition-opacity hover:opacity-80">
+										<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-6 w-6">
+											<path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+											<path stroke-linecap="round" stroke-linejoin="round" d="M15.91 11.672a.375.375 0 010 .656l-5.603 3.113a.375.375 0 01-.557-.328V8.887c0-.286.307-.466.557-.327l5.603 3.112z" />
+										</svg>
+										Видеоотзыв
+									</button>
+								</div>
+							</div>
+							<div class="relative w-5/12 max-[599px]:hidden md:w-4/12 lg:w-5/12">
+								<img class="h-full w-full object-cover object-center" src="img/teacher2.jpg" alt="" />
+								<div class="absolute bottom-4 right-4">
+									<button class="flex h-[60px] w-[190px] items-center justify-center gap-2 rounded-full bg-bluecolor font-Roboto text-xl uppercase text-menucolor transition-opacity hover:opacity-80">
+										<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-6 w-6">
+											<path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+											<path stroke-linecap="round" stroke-linejoin="round" d="M15.91 11.672a.375.375 0 010 .656l-5.603 3.113a.375.375 0 01-.557-.328V8.887c0-.286.307-.466.557-.327l5.603 3.112z" />
+										</svg>
+										Видеоотзыв
+									</button>
+								</div>
+							</div>
+						</div>
+						<!-- Review 4 -->
+						<div class="swiper-slide flex h-[400px] w-full overflow-hidden rounded-lg bg-white">
+							<div class="grid w-7/12 grid-rows-[auto_1fr_auto] px-3 py-4 text-textcolor max-[599px]:w-full md:w-8/12 lg:w-7/12">
+								<div class="flex gap-4">
+									<div class="hidden h-16 w-16 max-[599px]:block">
+										<img class="h-full w-full rounded-md object-cover object-center" src="img/teacher3.jpg" alt="" />
+									</div>
+									<span class="text-[24px] font-semibold">Григовий Григорьев</span>
+								</div>
+								<p class="overflow-auto py-4 font-Roboto text-base sm:text-xl">
+									Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas vel et, quisquam dicta dolore iure at assumenda minus voluptatem consectetur neque quidem, eos eaque reprehenderit. Cum
+									fugiat distinctio vero consequatur!
+								</p>
+								<div class="hidden w-full justify-center max-[599px]:flex">
+									<button class="flex h-[50px] w-[200px] items-center justify-center gap-2 rounded-full bg-bluecolor font-Roboto text-xl uppercase text-menucolor transition-opacity hover:opacity-80">
+										<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-6 w-6">
+											<path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+											<path stroke-linecap="round" stroke-linejoin="round" d="M15.91 11.672a.375.375 0 010 .656l-5.603 3.113a.375.375 0 01-.557-.328V8.887c0-.286.307-.466.557-.327l5.603 3.112z" />
+										</svg>
+										Видеоотзыв
+									</button>
+								</div>
+							</div>
+							<div class="relative w-5/12 max-[599px]:hidden md:w-4/12 lg:w-5/12">
+								<img class="h-full w-full object-cover object-center" src="img/teacher3.jpg" alt="" />
+								<div class="absolute bottom-4 right-4">
+									<button class="flex h-[60px] w-[190px] items-center justify-center gap-2 rounded-full bg-bluecolor font-Roboto text-xl uppercase text-menucolor transition-opacity hover:opacity-80">
+										<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-6 w-6">
+											<path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+											<path stroke-linecap="round" stroke-linejoin="round" d="M15.91 11.672a.375.375 0 010 .656l-5.603 3.113a.375.375 0 01-.557-.328V8.887c0-.286.307-.466.557-.327l5.603 3.112z" />
+										</svg>
+										Видеоотзыв
+									</button>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="relative m-[5px] flex h-16 items-center justify-center gap-4 rounded-lg bg-white">
+						<div class="swiper-pagination absolute flex h-full w-full items-center justify-center pt-4"></div>
+						<div class="swiper-button-prev absolute top-1 m-0 h-14 w-14 rounded-lg p-0 transition-all hover:bg-mainbg"></div>
+						<div class="swiper-button-next absolute top-1 m-0 h-14 w-14 rounded-lg p-0 transition-all hover:bg-mainbg"></div>
 					</div>
 				</div>
-				<div class="relative mt-4 flex h-16 items-center justify-center gap-4">
-					<div class="swiper-pagination absolute flex h-16 items-center justify-center"></div>
-					<div class="swiper-button-prev h-8"></div>
-					<div class="swiper-button-next h-8"></div>
-				</div>
-
 				<div class="mt-6 flex justify-center">
 					<button class="h-[60px] w-[200px] rounded-full bg-bluecolor font-Roboto text-xl uppercase text-menucolor transition-opacity hover:opacity-80">Все отзывы</button>
 				</div>
@@ -440,31 +553,44 @@
 				<div class="events mt-6 h-full w-full overflow-hidden rounded-lg text-menucolor shadow-[0_0_10px_rgba(0,0,0,.4)]">
 					<div class="swiper-wrapper rounded-lg">
 						<!-- Event 1 -->
-						<div class="swiper-slide flex h-[400px] w-full bg-white">
+						<div
+							class="swiper-slide PicBefore flex h-[400px] w-full overflow-hidden rounded-lg bg-white bg-cover bg-center max-[599px]:bg-[url('../img/rehabilitation.jpg')] min-[600px]:before:opacity-0"
+						>
 							<div class="relative w-[40%] max-[599px]:hidden">
 								<img class="h-full w-full object-cover object-center" src="img/rehabilitation.jpg" alt="" />
 							</div>
-							<div class="grid w-[60%] grid-rows-[auto_1fr_auto] px-3 py-4 text-textcolor max-[599px]:w-full">
-								<div class="flex gap-4">
-									<div class="hidden h-16 w-16 max-[599px]:block">
-										<img class="h-full w-full rounded-md object-cover object-center" src="img/rehabilitation.jpg" alt="" />
-									</div>
+							<div class="grid w-[60%] grid-rows-[auto_1fr_auto] text-textcolor max-[599px]:w-full max-[599px]:text-white">
+								<div class="z-[2] flex gap-4 px-3 py-4">
 									<span class="text-[24px] font-semibold">Новый курс - Преодоление эмоциональной травмы войны</span>
 								</div>
-								<p class="overflow-auto py-4 font-Roboto text-base sm:text-xl">
+								<p class="z-[2] overflow-auto px-3 py-4 font-Roboto text-base sm:text-xl">
+									Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas vel et, quisquam dicta dolore iure at assumenda minus voluptatem consectetur neque quidem, eos eaque reprehenderit. Cum
+									fugiat distinctio vero consequatur!
+								</p>
+							</div>
+						</div>
+						<!-- Event 2 -->
+						<div class="swiper-slide PicBefore flex h-[400px] w-full overflow-hidden rounded-lg bg-white bg-cover bg-center max-[599px]:bg-[url('../img/course1.jpg')] min-[600px]:before:opacity-0">
+							<div class="relative w-[40%] max-[599px]:hidden">
+								<img class="h-full w-full object-cover object-center" src="img/course1.jpg" alt="" />
+							</div>
+							<div class="grid w-[60%] grid-rows-[auto_1fr_auto] text-textcolor max-[599px]:w-full max-[599px]:text-white">
+								<div class="z-[2] flex gap-4 px-3 py-4">
+									<span class="text-[24px] font-semibold">Новый курс - Преодоление эмоциональной травмы войны</span>
+								</div>
+								<p class="z-[2] overflow-auto px-3 py-4 font-Roboto text-base sm:text-xl">
 									Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas vel et, quisquam dicta dolore iure at assumenda minus voluptatem consectetur neque quidem, eos eaque reprehenderit. Cum
 									fugiat distinctio vero consequatur!
 								</p>
 							</div>
 						</div>
 					</div>
+					<div class="relative m-[5px] flex h-16 items-center justify-center gap-4 rounded-lg bg-white">
+						<div class="swiper-pagination absolute flex h-full w-full items-center justify-center pt-4"></div>
+						<div class="swiper-button-prev absolute top-1 m-0 h-14 w-14 rounded-lg p-0 transition-all hover:bg-mainbg"></div>
+						<div class="swiper-button-next absolute top-1 m-0 h-14 w-14 rounded-lg p-0 transition-all hover:bg-mainbg"></div>
+					</div>
 				</div>
-				<!-- <div class="relative mt-4 flex h-16 items-center justify-center gap-4">
-					<div class="swiper-pagination-events relative flex h-16 items-center justify-center"></div>
-					<div class="swiper-button-prev-events h-8"></div>
-					<div class="swiper-button-next-events h-8"></div>
-				</div> -->
-
 				<!-- <div class="mt-6 flex justify-center">
 					<button class="h-[60px] w-[200px] rounded-full bg-bluecolor font-Roboto text-xl uppercase text-menucolor transition-opacity hover:opacity-80">Все отзывы</button>
 				</div> -->
