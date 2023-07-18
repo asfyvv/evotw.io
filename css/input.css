@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 .PicBefore {
-	@apply before:absolute before:z-[2] before:h-full before:w-full before:bg-[#000000] before:opacity-40;
+	@apply before:absolute before:z-[2] before:h-full before:w-full before:bg-black before:opacity-50;
 }
 
 .courseBefore {
@@ -86,7 +86,7 @@
 }
 
 .swiper-pagination-bullet {
-	padding: 5px 10px;
+	padding: 0 10px;
 	border-radius: 0;
 	width: 20px;
 	height: 20px;
@@ -94,6 +94,7 @@
 	text-align: center;
 	line-height: 30px;
 	font-size: 12px;
+	line-height: 12px;
 	color: #000;
 	opacity: 1;
 	background: rgba(0, 0, 0, 0.2);
@@ -103,6 +104,18 @@
 	color: #fff;
 	background: #1f5bff;
 }
+
+.introEvents .swiper-button-prev,
+.introEvents .swiper-button-next {
+	/* background-color: rgba(100, 100, 100, 0.1); */
+	/* border: 1px solid #1f5bff; */
+}
+
+.introEvents .swiper-button-prev:after,
+.introEvents .swiper-button-next:after {
+	font-size: 28px;
+}
+
 /* h2:after {
     content: "";
     position: absolute;
