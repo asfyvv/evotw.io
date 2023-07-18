@@ -9,7 +9,6 @@ document.addEventListener("DOMContentLoaded", function () {
 		fadeEffect: {
 			crossFade: true,
 		},
-
 		loop: true,
 	});
 	const review = new Swiper(".review", {
@@ -25,20 +24,41 @@ document.addEventListener("DOMContentLoaded", function () {
 			type: "bullets",
 			clickable: true,
 		},
+		breakpoints: {
+			// when window width is >= 768px
+			1280: {
+				slidesPerView: 2,
+				slidesPerGroup: 2,
+				spaceBetween: 5,
+			},
+		},
 	});
 	const events = new Swiper(".events", {
 		slidesPerView: 1,
 		loop: true,
-		spaceBetween: 20,
 		navigation: {
-			nextElEvents: ".swiper-button-next-events",
-			prevElEvents: ".swiper-button-prev-events",
+			nextEl: ".swiper-button-next",
+			prevEl: ".swiper-button-prev",
 		},
 		pagination: {
-			elEvents: ".swiper-pagination-events",
+			el: ".swiper-pagination",
 			type: "bullets",
 			clickable: true,
 		},
+	});
+
+	const introEvents = new Swiper(".introEvents", {
+		slidesPerView: 1,
+		loop: true,
+		navigation: {
+			nextEl: ".swiper-button-next",
+			prevEl: ".swiper-button-prev",
+		},
+		// pagination: {
+		// 	el: ".swiper-pagination",
+		// 	type: "bullets",
+		// 	clickable: true,
+		// },
 	});
 
 
